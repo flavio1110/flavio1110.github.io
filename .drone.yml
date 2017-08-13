@@ -8,4 +8,5 @@ pipeline:
     volumes:
       - $HOME/site:/site
     commands:
+      - mkdir site
       - cp -R * /site
