@@ -6,7 +6,6 @@ pipeline:
       branch: [master]
     privileged: true
     volumes:
-      - $HOME/site:/site
+      - /srv:/site
     commands:
-      - mkdir site
       - cp -R * /site
