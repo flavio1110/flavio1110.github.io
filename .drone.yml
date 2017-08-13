@@ -1,0 +1,11 @@
+pipeline:
+  buid-docker: 
+    image: docker:17.04.0-ce
+    when:
+      event: push
+      branch: [master]
+    privileged: true
+    volumes:
+      - $HOME/site:/site
+    commands:
+      - cp -R * /site
