@@ -1,4 +1,3 @@
-
 pipeline:
   buid-docker: 
     image: docker:17.04.0-ce
