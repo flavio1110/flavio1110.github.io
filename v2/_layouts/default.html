@@ -3,19 +3,28 @@
 
   {%- include head.html -%}
 
-  <body>
+  <body class="is-preload">
 
     {%- include header.html -%}
-
-    <main class="page-content" aria-label="Content">
-      <div class="wrapper">
-        <h2>test hoho ho</h2>
+  
+    <!-- Wrapper -->
+		<div id="wrapper">
+				<!-- Main -->
+					<div id="main">
         {{ content }}
       </div>
-    </main>
+    </div>
+
 
     {%- include footer.html -%}
-
+      <!-- Scripts -->
+    <script src="{{ "assets/js/jquery.min.js" | relative_url }}"></script>
+    <script src="{{ "assets/js/jquery.scrollex.min.js" | relative_url }}"></script>
+    <script src="{{ "assets/js/jquery.scrolly.min.js" | relative_url }}"></script>
+    <script src="{{ "assets/js/browser.min.js" | relative_url }}"></script>
+    <script src="{{ "assets/js/breakpoints.min.js" | relative_url }}"></script>
+    <script src="{{ "assets/js/util.js" | relative_url }}"></script>
+    <script src="{{ "assets/js/main.js" | relative_url }}"></script>
   </body>
 
 </html>

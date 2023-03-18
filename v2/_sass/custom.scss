@@ -1,0 +1,38 @@
+.home-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap:1rem;
+    margin: 2rem;
+    
+}
+.home-container p {
+    margin:0 0 .7rem;
+}
+
+.card {
+    background-color: _palette(header, bg);
+    border-radius: .5rem;
+    padding: 1rem;
+    color: #fff;
+    -webkit-box-shadow: 7px 10px 8px 1px rgba(69,68,69,0.52);
+    -moz-box-shadow: 7px 10px 8px 1px rgba(69,68,69,0.52);
+    box-shadow: 7px 10px 8px 1px rgba(69,68,69,0.52);
+    h3 {
+        color: #fff!important;
+        font-weight: normal;
+    }
+    a:hover {
+        color:#fff;
+    }
+    .icons-card {
+        margin:2rem 0 0 0;
+        display:flex;
+        justify-content: center;
+        ul {
+            margin:0;
+        }
+        a {
+            font-size: 2rem;
+        }
+    }   
+}
