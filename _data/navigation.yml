@@ -1,0 +1,6 @@
+- name: Home
+  path: /
+  url: /
+- name: Blog
+  path: /blog
+  url: /blog.html
