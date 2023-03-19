@@ -739,7 +739,7 @@
 
 		&.main {
 			display: block;
-			height: 20em;
+			height: 17em;
 			border-radius: 0;
 
 			img {
@@ -1382,7 +1382,7 @@
 
 	@include breakpoint('<=large') {
 
-		$size-header: 20em;
+		$size-header: 17em;
 
 		/* Basic */
 
@@ -1440,7 +1440,7 @@
 				}
 
 				&.main {
-					height: 20em;
+					height: 13em;
 				}
 			}
 
@@ -1622,7 +1622,7 @@
 				}
 
 				&.main {
-					height: 12em;
+					height: 8em;
 				}
 			}
 

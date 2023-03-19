@@ -14,25 +14,46 @@
     border-radius: .5rem;
     padding: 1rem;
     color: #fff;
-    -webkit-box-shadow: 7px 10px 8px 1px rgba(69,68,69,0.52);
-    -moz-box-shadow: 7px 10px 8px 1px rgba(69,68,69,0.52);
-    box-shadow: 7px 10px 8px 1px rgba(69,68,69,0.52);
+    -webkit-box-shadow: 5px 5px 8px 1px rgba(69,68,69,0.52);
+    -moz-box-shadow: 5px 5px 8px 1px rgba(69,68,69,0.52);
+    box-shadow: 5px 5px 8px 1px rgba(69,68,69,0.52);
     h3 {
         color: #fff!important;
         font-weight: normal;
     }
     a:hover {
-        color:#fff;
+        color:#fff!important;
     }
     .icons-card {
         margin:2rem 0 0 0;
-        display:flex;
-        justify-content: center;
-        ul {
-            margin:0;
-        }
+        
         a {
-            font-size: 2rem;
+            font-size: 1.5rem;
         }
     }   
+}
+#header {
+    font-family: "Lato";
+    -webkit-box-shadow: -3px 1px 3px -1px rgba(105,105,105,0.65); 
+    -moz-box-shadow: -3px 1px 3px -1px rgba(105,105,105,0.65); 
+    box-shadow: -3px 1px 3px -1px rgba(105,105,105,0.65);
+}
+
+.menu-logo {
+    height: 17em;
+}
+
+.main img {
+    -webkit-box-shadow: 0px 3px 2px -1px #696969; 
+    -moz: 0px 3px 2px -1px #696969; 
+    box-shadow: 0px 3px 2px -1px #696969;
+}
+
+.center {
+    text-align: center;
+}
+
+.px-2{
+    padding-left:2rem;
+    padding-right:2rem;
 }
