@@ -7,7 +7,7 @@ layout: home
         <img src="images/banner.jpeg" alt="" />
     </div>
     <div class="home-container" id="home">
-        <div class="card center">
+        <div class="card center source-pro">
             <h3>Hello there! 👋 </h3>
             <div class="px-2">
                 <p>I'm fascinated about how tech can change people's lives and how we can tackle real-world problems with software.</p>
@@ -23,21 +23,27 @@ layout: home
             </ul>
         </div>
         {%- if site.posts.size > 0 -%}
-        <div class="card">
-            <h3>📣 Latest posts </h3>
-            <ul class="post-list">
-                {%- for post in site.posts -%}
+        <div class="card latest-posts">
+            <h4 class="text-center">📣 📣 📣 Latest posts 📣 📣 📣 </h4>
+            <ul class="no-bullets">
+                {%- for post in site.posts limit:3 -%}
                 <li>
                     {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-                    <span class="post-meta">{{ post.date | date: date_format }}</span>
-                    <h3>
-                    <a class="post-link" href="{{ post.url | relative_url }}">
-                        {{ post.title | escape }}
-                    </a>
-                    </h3>
-                    {%- if site.show_excerpts -%}
-                    {{ post.excerpt }}
-                    {%- endif -%}
+                    <div class="post-meta">
+                        <span>{{ post.date | date: date_format }}</span>
+                    </div>
+                    <h4>
+                        <a href="{{ post.url | relative_url }}">
+                            <span class="block">{{ post.title | escape }}</span>
+                            {%- if post.show_excerpts -%}
+                            <span class="excerpt">
+                                {{ post.excerpt }}
+                            </span>
+                            {%- endif -%}
+                        </a>
+                    </h4>
+                    
+                    
                 </li>
                 {%- endfor -%}
             </ul>

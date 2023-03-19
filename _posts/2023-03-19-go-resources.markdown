@@ -1,11 +1,13 @@
 ---
 layout: post
-title: "Go resources for beginners"
+title: "🧠 Go resources for beginners"
 date: 2023-03-19 14:00:00 +0100
 categories: go resources
+excerpt: living list of compiled links for whoever is learning Go or want to keep up to date
+show_excerpts: true
 ---
 
-Below a list of compiled links for whoever is learning Go or want to keep up to date.
+Below a living list of compiled links for whoever is learning Go or want to keep up to date.
 
 ### Official docs
 

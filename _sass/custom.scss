@@ -8,7 +8,6 @@
     small:    ( 481px,   736px  ),
     xsmall:   ( null,    480px  ),
 ));
-
 .home-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
@@ -31,7 +30,7 @@
     -webkit-box-shadow: 5px 5px 8px 1px rgba(69,68,69,0.52);
     -moz-box-shadow: 5px 5px 8px 1px rgba(69,68,69,0.52);
     box-shadow: 5px 5px 8px 1px rgba(69,68,69,0.52);
-    h3 {
+    h3,h4 {
         color: #fff!important;
         font-weight: normal;
     }
@@ -62,12 +61,64 @@
     -moz: 0px 3px 2px -1px #696969; 
     box-shadow: 0px 3px 2px -1px #696969;
 }
+.latest-posts {
+    h4 {
+        margin:0;
+    }
+    ul {
+        margin-top:1rem;
+    }
+    li:not(:last-child):after {
+        content :"";
+        display: block;
+        width: 90%;
+        margin: 1rem auto 1rem auto;
+        height: 1px;
+        background: #DCDCDC;
+    }
+}
+.post-meta {
+    font-size: .7rem;
+    font-style: italic;
+    color: #DCDCDC;
+    line-height: 1rem;
+}
+.excerpt {
+    font-size: .9rem;
+    font-style: italic;
+    color: #DCDCDC;
+    line-height: 1rem;
+}
+.excerpt:after {
+    content :"... [Continue reading]";
+}
 
+/* helper classes */
 .center {
     text-align: center;
+}
+
+.block {
+    display:block;
 }
 
 .px-2{
     padding-left:2rem;
     padding-right:2rem;
 }
+
+.source-pro {
+    font-family: "Source Code Pro"
+}
+
+.text-right{
+    text-align: right;
+}
+.text-center{
+    text-align: center;
+}
+
+ul.no-bullets {
+    list-style-type: none; /* Remove bullets */
+    padding: 0; /* Remove padding */
+  }
