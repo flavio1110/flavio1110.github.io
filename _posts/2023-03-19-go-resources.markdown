@@ -8,7 +8,7 @@ show_excerpts: true
 banner: "images/gopher-side-eye.png"
 ---
 
-Below a living list of compiled links for whoever is learning **Go** or want to keep up to date.
+Below a living list of compiled links for whoever is learning **Go**.
 
 ### Official docs
 

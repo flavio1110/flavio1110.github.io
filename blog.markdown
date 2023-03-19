@@ -5,7 +5,7 @@ layout: home
 <div class="m-1">
 <h2>Blog</h2>
     <ul class="no-bullets items-separator">
-        {%- for post in site.posts limit:3 -%}
+        {%- for post in site.posts -%}
         <li>
             {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
             <div class="italic text-size-9">

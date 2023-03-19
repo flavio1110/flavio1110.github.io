@@ -75,6 +75,21 @@
 .blog {
     margin:2rem;
 }
+.social-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    a {
+        border: solid 1px #DCDCDC;
+        border-radius: .3rem;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+    a:hover {
+        border: solid 1px #696969;
+        background-color: #DCDCDC;
+    }
+}
 
 /* helper classes */
 .block {
@@ -144,4 +159,8 @@ ul.no-bullets {
         height: 1px;
         background: #DCDCDC;
     }
+}
+
+.text-bold {
+    font-weight: bold;
 }
