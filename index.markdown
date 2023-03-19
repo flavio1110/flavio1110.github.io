@@ -31,19 +31,19 @@ layout: home
                     <a href="{{ post.url | relative_url }}">
                         <span class="block">{{ post.title | escape }}</span>
                         {%- if post.show_excerpts -%}
-                        <span class="excerpt italic color-light-gray text-size-9">
+                        <span class="excerpt italic color-light-gray text-size-9 line-height-1">
                             {{ post.excerpt }}
                         </span>
                         {%- endif -%}
                     </a>
                 </h4>
             </li>
+            {%- endfor -%}
             <li class="text-right pr-2 text-size-9">
                 <a href="{{ "/blog" | absolute_url }}">
                     <span class="block">👀 View all posts</span>
                 </a>
             </li>
-            {%- endfor -%}
         </ul>
     </div>
     {%- endif -%}

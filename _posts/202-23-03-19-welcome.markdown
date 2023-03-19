@@ -1,0 +1,17 @@
+---
+layout: post
+title: "👋 Welcome"
+date: 2023-03-19 14:00:00 +0100
+categories: blog
+excerpt: I'll be sharing my discoveries, studies, and experiences in the software industry. As a software engineer
+show_excerpts: true
+banner: "images/code-banner.png"
+---
+
+Welcome, here I'll be sharing my discoveries, studies, and experiences in the software industry. As a software engineer, I've had the opportunity to work on a variety of projects and technologies, and I've learned a lot along the way.
+
+My goal in creating this blog is to document my journey and share what I've learned with others. Whether you're a seasoned developer or just starting out, I hope that the insights and knowledge I share will be useful and valuable to you.
+
+In this blog, you can expect to find posts about various topics related to software engineering, such as programming languages, frameworks, tools, best practices, and more. I'll also share my thoughts on the latest trends and developments in the industry.
+
+Above all, I hope that this blog will inspire you to continue learning and growing as a software engineer. Thanks for stopping by, and I look forward to sharing my experiences with you.
