@@ -9,11 +9,13 @@
   <nav id="nav">
     <ul>
       {% for link in site.data.navigation %}
-      {% assign class = nil %}
-      {% if page.url == link.url %}
+        {% assign class = nil %}
+        {% if page.url == link.url %}
+            {% assign class = 'active' %}
+        {% elsif link.name == 'Blog' and page.url contains 'blog' %}
           {% assign class = 'active' %}
-      {% endif %}
-      <li><a href="{{ link.path | absolute_url }}" class="{{ class }}">{{link.name}}</a></li>
+        {% endif %}
+        <li><a href="{{ link.path | absolute_url }}" class="{{ class }}">{{link.name}}</a></li>
       {% endfor %}
     </ul>
   </nav>

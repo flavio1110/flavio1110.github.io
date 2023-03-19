@@ -62,10 +62,10 @@
       if ($this.attr("href").charAt(0) != "#") return;
 
       // Deactivate all links.
-      $nav_a.removeClass("active");
+      //$nav_a.removeClass("active");
 
       // Activate link *and* lock it (so Scrollex doesn't try to activate other links as we're scrolling to this one's section).
-      $this.addClass("active").addClass("active-locked");
+      //$txhis.addClass("active").addClass("active-locked");
     })
     .each(function () {
       var $this = $(this),
@@ -81,21 +81,19 @@
         bottom: "5vh",
         initialize: function () {
           // Deactivate section.
-          $section.addClass("inactive");
+          //$section.addClass("inactive");
         },
         enter: function () {
           // Activate section.
-          $section.removeClass("inactive");
-
+          //$section.removeClass("inactive");
           // No locked links? Deactivate all links and activate this section's one.
-          if ($nav_a.filter(".active-locked").length == 0) {
-            $nav_a.removeClass("active");
-            $this.addClass("active");
-          }
-
+          // if ($nav_a.filter(".active-locked").length == 0) {
+          //   $nav_a.removeClass("active");
+          //   $this.addClass("active");
+          // }
           // Otherwise, if this section's link is the one that's locked, unlock it.
-          else if ($this.hasClass("active-locked"))
-            $this.removeClass("active-locked");
+          // else if ($this.hasClass("active-locked"))
+          //   $this.removeClass("active-locked");
         },
       });
     });

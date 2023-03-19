@@ -68,26 +68,6 @@
     ul {
         margin-top:1rem;
     }
-    li:not(:last-child):after {
-        content :"";
-        display: block;
-        width: 90%;
-        margin: 1rem auto 1rem auto;
-        height: 1px;
-        background: #DCDCDC;
-    }
-}
-.post-meta {
-    font-size: .7rem;
-    font-style: italic;
-    color: #DCDCDC;
-    line-height: 1rem;
-}
-.excerpt {
-    font-size: .9rem;
-    font-style: italic;
-    color: #DCDCDC;
-    line-height: 1rem;
 }
 .excerpt:after {
     content :"... [Continue reading]";
@@ -97,10 +77,6 @@
 }
 
 /* helper classes */
-.center {
-    text-align: center;
-}
-
 .block {
     display:block;
 }
@@ -124,4 +100,48 @@
 ul.no-bullets {
     list-style-type: none; /* Remove bullets */
     padding: 0; /* Remove padding */
-  }
+}
+.m-1 {
+    margin: 1rem;
+}
+.m-2 {
+    margin: 2rem;
+}
+
+.pr-2 {
+    padding-right: 2rem;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.line-height-1 {
+    line-height: 1rem;
+}
+
+.color-light-gray {
+    color: #DCDCDC;
+}
+
+.text-size-7 {
+    font-size: .7rem;
+}
+
+.text-size-9 {
+    font-size: .9rem;
+}
+.text-size-20 {
+    font-size: 2rem;
+}
+
+.items-separator {
+    li:not(:last-child):after {
+        content :"";
+        display: block;
+        width: 90%;
+        margin: 1rem auto 1rem auto;
+        height: 1px;
+        background: #DCDCDC;
+    }
+}

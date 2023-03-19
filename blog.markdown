@@ -2,19 +2,20 @@
 layout: home
 ---
 
-<div>
-    <ul class="no-bullets">
+<div class="m-1">
+<h2>Blog</h2>
+    <ul class="no-bullets items-separator">
         {%- for post in site.posts limit:3 -%}
         <li>
             {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-            <div class="post-meta">
+            <div class="italic text-size-9">
                 <span>{{ post.date | date: date_format }}</span>
             </div>
             <h4>
                 <a href="{{ post.url | relative_url }}">
                     <span class="block">{{ post.title | escape }}</span>
                     {%- if post.show_excerpts -%}
-                    <span class="excerpt">
+                    <span class="excerpt italic text-size-9">
                         {{ post.excerpt }}
                     </span>
                     {%- endif -%}

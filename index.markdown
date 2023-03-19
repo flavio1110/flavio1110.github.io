@@ -3,7 +3,7 @@ layout: home
 ---
 
 <div class="home-container" id="home">
-    <div class="card center source-pro">
+    <div class="card text-center source-pro">
         <h3>Hello there! 👋 </h3>
         <div class="px-2">
             <p>I'm fascinated about how tech can change people's lives and how we can tackle real-world problems with software.</p>
@@ -21,25 +21,28 @@ layout: home
     {%- if site.posts.size > 0 -%}
     <div class="card latest-posts">
         <h4 class="text-center">📣 📣 📣 Latest posts 📣 📣 📣 </h4>
-        <ul class="no-bullets">
+        <ul class="no-bullets items-separator">
             {%- for post in site.posts limit:3 -%}
             <li>
                 {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-                <div class="post-meta">
+                <div class="italic color-light-gray text-size-7">
                     <span>{{ post.date | date: date_format }}</span>
                 </div>
                 <h4>
                     <a href="{{ post.url | relative_url }}">
                         <span class="block">{{ post.title | escape }}</span>
                         {%- if post.show_excerpts -%}
-                        <span class="excerpt">
+                        <span class="excerpt italic color-light-gray text-size-9">
                             {{ post.excerpt }}
                         </span>
                         {%- endif -%}
                     </a>
                 </h4>
-                
-                
+            </li>
+            <li class="text-right pr-2 text-size-9">
+                <a href="{{ "/blog" | absolute_url }}">
+                    <span class="block">👀 View all posts</span>
+                </a>
             </li>
             {%- endfor -%}
         </ul>
