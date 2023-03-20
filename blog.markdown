@@ -15,7 +15,7 @@ layout: home
                 <a href="{{ post.url | relative_url }}">
                     <span class="block">{{ post.title | escape }}</span>
                     {%- if post.show_excerpts -%}
-                    <span class="excerpt italic text-size-9">
+                    <span class="excerpt italic text-size-9 text-normal">
                         {{ post.excerpt }}
                     </span>
                     {%- endif -%}

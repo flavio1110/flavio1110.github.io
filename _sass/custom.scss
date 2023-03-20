@@ -91,6 +91,12 @@
     }
 }
 
+#header {
+    > header {
+        padding: 1em!important;
+    }
+}
+
 /* helper classes */
 .block {
     display:block;
@@ -105,10 +111,13 @@
     font-family: "Source Code Pro"
 }
 
-.text-right{
+.text-right {
     text-align: right;
 }
-.text-center{
+.text-normal {
+    font-weight: normal;
+}
+.text-center {
     text-align: center;
 }
 
@@ -163,4 +172,8 @@ ul.no-bullets {
 
 .text-bold {
     font-weight: bold;
+}
+
+.ml-2 {
+    margin-left:2rem;
 }
