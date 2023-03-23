@@ -90,6 +90,11 @@
         background-color: #DCDCDC;
     }
 }
+.center-container {
+    max-width: 1024px;
+    margin-right:auto;
+    margin-left:auto;
+}
 
 #header {
     > header {
@@ -130,6 +135,10 @@ ul.no-bullets {
 }
 .m-2 {
     margin: 2rem;
+}
+
+.mx-2 {
+    margin: 0 2rem 0 2rem;
 }
 
 .pr-2 {

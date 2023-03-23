@@ -8,30 +8,32 @@ layout: default
 <div class="image main" data-position="center">
   <img src="{{ banner | absolute_url }}" alt="" />
 </div>
-<div class="text-size-9 ml-2" >
-  <a href="{{ "/blog" | absolute_url }}">Blog</a> › <a href="{{ page.url | absolute_url }}">{{ page.title | escape }}</a>
+<div class="center-container">
+  <div class="text-size-9 ml-2" >
+    <a href="{{ "/blog" | absolute_url }}">Blog</a> › <a href="{{ page.url | absolute_url }}">{{ page.title | escape }}</a>
+  </div>
+  <article class="h-entry m-2" itemscope itemtype="http://schema.org/BlogPosting">
+    <header class="">
+      <h1 class="text-size-20" itemprop="name headline">{{ page.title | escape }}</h1>
+      <p class="italic text-size-9">
+        <time class="" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+          {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+          {{ page.date | date: date_format }}
+        </time>
+    </header>
+
+    <div class="" itemprop="articleBody">
+      {{ content }}
+    </div>
+
+    {%- if site.disqus.shortname -%}
+      {%- include disqus_comments.html -%}
+    {%- endif -%}
+
+    <div class="text-right text-size-9" >
+      <a href="{{ "/blog" | absolute_url }}">View other posts</a> | <a href="#top">Go back to the top ↑</a>
+    </div>
+    
+    <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
+  </article>
 </div>
-<article class="post h-entry m-2" itemscope itemtype="http://schema.org/BlogPosting">
-  <header class="">
-    <h1 class="text-size-20" itemprop="name headline">{{ page.title | escape }}</h1>
-    <p class="italic text-size-9">
-      <time class="" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
-        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-        {{ page.date | date: date_format }}
-      </time>
-  </header>
-
-  <div class="" itemprop="articleBody">
-    {{ content }}
-  </div>
-
-  {%- if site.disqus.shortname -%}
-    {%- include disqus_comments.html -%}
-  {%- endif -%}
-
-  <div class="text-right text-size-9" >
-    <a href="{{ "/blog" | absolute_url }}">View other posts</a> | <a href="#top">Go back to the top ↑</a>
-  </div>
-  
-  <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
-</article>

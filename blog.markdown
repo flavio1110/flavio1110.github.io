@@ -2,8 +2,8 @@
 layout: home
 ---
 
-<div class="m-1">
-<h2>Blog</h2>
+<div class="center-container mx-2">
+    <h2>Blog</h2>
     <ul class="no-bullets items-separator">
         {%- for post in site.posts -%}
         <li>
