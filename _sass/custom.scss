@@ -8,6 +8,8 @@
     small:    ( 481px,   736px  ),
     xsmall:   ( null,    480px  ),
 ));
+$size-header: 23em;
+
 .home-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
@@ -94,7 +96,48 @@
     max-width: 1024px;
     margin-right:auto;
     margin-left:auto;
+    min-height: calc(100svh - 17em);
+    -webkit-box-shadow: -4px 0px 4px 0px rgba(220,220,220,1), 4px 0px 4px 0px rgba(220,220,220,1);
+    -moz-box-shadow: -4px 0px 4px 0px rgba(220,220,220,1), 4px 0px 4px 0px rgba(220,220,220,1);
+    box-shadow: -4px 0px 4px 0px rgba(220,220,220,1), 4px 0px 4px 0px rgba(220,220,220,1);
+
 }
+.tags {
+    display: flex;
+    gap: 5px;
+    list-style-type: none;
+    margin:0;
+    padding:0;
+    li {
+        padding: 0 4px 0 4px;
+        border: solid 1px #696969;
+        background-color: #DCDCDC;
+        display: inline-block;
+        font-size: .9rem;
+        color: #696969;
+        border-radius: 4px;
+        line-height: 1.1rem;
+        height: fit-content;
+        margin: 2px 0 2px;
+        font-weight: normal;
+    }
+}
+
+.items-separator {
+    > li {
+        padding-left:0!important;
+    }
+    > li:not(:last-child):after {
+        content :"";
+        display: block;
+        width: 90%;
+        margin: 1rem auto 1rem auto;
+        height: 1px;
+        background: #DCDCDC;
+        font-weight: normal;;
+    }
+}
+
 
 #header {
     > header {
@@ -105,6 +148,11 @@
 /* helper classes */
 .block {
     display:block;
+}
+
+.px-1{
+    padding-left:1rem;
+    padding-right:1rem;
 }
 
 .px-2{
@@ -130,6 +178,7 @@ ul.no-bullets {
     list-style-type: none; /* Remove bullets */
     padding: 0; /* Remove padding */
 }
+
 .m-1 {
     margin: 1rem;
 }
@@ -139,6 +188,10 @@ ul.no-bullets {
 
 .mx-2 {
     margin: 0 2rem 0 2rem;
+}
+
+.mt-1 {
+    margin-top: 1rem;
 }
 
 .pr-2 {
@@ -166,17 +219,6 @@ ul.no-bullets {
 }
 .text-size-20 {
     font-size: 2rem;
-}
-
-.items-separator {
-    li:not(:last-child):after {
-        content :"";
-        display: block;
-        width: 90%;
-        margin: 1rem auto 1rem auto;
-        height: 1px;
-        background: #DCDCDC;
-    }
 }
 
 .text-bold {

@@ -31,6 +31,7 @@ layout: home
                     <a href="{{ post.url | relative_url }}">
                         <span class="block">{{ post.title | escape }}</span>
                         {%- if post.show_excerpts -%}
+                        {%- include tags.html -%}
                         <span class="excerpt italic color-light-gray text-size-9 line-height-1">
                             {{ post.excerpt }}
                         </span>

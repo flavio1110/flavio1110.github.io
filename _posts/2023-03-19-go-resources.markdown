@@ -6,6 +6,7 @@ categories: blog
 excerpt: A living list of compiled links for whoever is learning Go or want to keep up to date with it
 show_excerpts: true
 banner: "images/gopher-side-eye.png"
+tags: ["go", "programming", "resources"]
 ---
 
 Below a living list of compiled links for whoever is learning **Go**.

@@ -2,7 +2,7 @@
 layout: home
 ---
 
-<div class="m-1 text-center">
+<div class="text-center center-container px-2">
     <h2>✉️ Contact</h2>
     <p>Hit me up using one of the channels below, and we'll chat real soon! :)</p>
     <div class="social-cards">

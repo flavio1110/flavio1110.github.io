@@ -2,7 +2,10 @@
 layout: home
 ---
 
-<div class="center-container mx-2">
+<div class="center-container mx-2 px-1">
+  <div class="text-size-9" >
+    <a href="{{ "/" | absolute_url }}">Home</a> › <a href="{{ "/blog" | absolute_url }}">Blog</a>
+  </div>
     <h2>Blog</h2>
     <ul class="no-bullets items-separator">
         {%- for post in site.posts -%}
@@ -14,6 +17,7 @@ layout: home
             <h4>
                 <a href="{{ post.url | relative_url }}">
                     <span class="block">{{ post.title | escape }}</span>
+                    {%- include tags.html -%}
                     {%- if post.show_excerpts -%}
                     <span class="excerpt italic text-size-9 text-normal">
                         {{ post.excerpt }}

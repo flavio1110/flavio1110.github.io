@@ -10,17 +10,20 @@ layout: default
 </div>
 <div class="center-container">
   <div class="text-size-9 ml-2" >
-    <a href="{{ "/blog" | absolute_url }}">Blog</a> › <a href="{{ page.url | absolute_url }}">{{ page.title | escape }}</a>
+    <a href="{{ "/" | absolute_url }}">Home</a> › <a href="{{ "/blog" | absolute_url }}">Blog</a> › <a href="{{ page.url | absolute_url }}">{{ page.title | escape }}</a>
   </div>
-  <article class="h-entry m-2" itemscope itemtype="http://schema.org/BlogPosting">
+  <article class="h-entry mx-2 mt-1" itemscope itemtype="http://schema.org/BlogPosting">
     <header class="">
       <h1 class="text-size-20" itemprop="name headline">{{ page.title | escape }}</h1>
+      {%- include tags.html -%}
       <p class="italic text-size-9">
         <time class="" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
           {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
           {{ page.date | date: date_format }}
         </time>
     </header>
+
+
 
     <div class="" itemprop="articleBody">
       {{ content }}
