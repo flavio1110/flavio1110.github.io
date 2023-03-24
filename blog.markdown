@@ -2,7 +2,7 @@
 layout: home
 ---
 
-<div class="center-container mx-2 px-1">
+<div class="center-container px-1">
   <div class="text-size-9" >
     <a href="{{ "/" | absolute_url }}">Home</a> › <a href="{{ "/blog" | absolute_url }}">Blog</a>
   </div>
