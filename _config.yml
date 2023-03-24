@@ -1,55 +1,79 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely edit after that. If you find
-# yourself editing this file very often, consider using Jekyll's data files
-# feature for the data you need to update frequently.
-#
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
-#
-# If you need help with YAML syntax, here are some quick references for you:
-# https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
-# https://learnxinyminutes.com/docs/yaml/
-#
-# Site settings
-# These are used to personalize your new site. If you look in the HTML files,
-# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
-# You can create any custom variable you would like, and they will be accessible
-# in the templates via {{ site.myvariable }}.
-
-title: Flavio Silva
+# General Settings
+name: Flavio Silva
+job_title: Software engineer and stuff ッ
 email: flavio1110@gmail.com
-description: >- # this means to ignore newlines until "baseurl:"
-  Sharing my discoveries, studies, and experiences in the software industry. As a software engineer, I’ve had the opportunity to work on a variety of projects and technologies, and I’ve learned a lot along the way.   Go, C#, Typescript, SQL, Postgres, Kubernets, React, NextJS, Jekyll, Git, HTML, CSS.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://flaviosilva.dev" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: flavio1110
-github_username: flavio1110
+description: I'm fascinated about how tech can change people's lives and how we can tackle real-world problems with software. Hit me up using one of the channels, and we'll chat real soon! :)
+avatar: https://fsilva.me/images/avatar.jpg
+favicon: images/favicon.ico
+twitter_handler: your_handler
+analytics_code: G-77HRLY1L61
+disqus:
 
-# Build settings
-theme: minima
-plugins:
-  - jekyll-feed
+# Social Accounts
+social_networks:
+  - { name: facebook, url: "" }
+  - { name: twitter, url: "https://twitter.com/flavio1110" }
+  - { name: instagram, url: "" }
+  - { name: google-plus, url: "" }
+  - { name: linkedin, url: "https://www.linkedin.com/in/flavio1110" }
+  - { name: skype, url: "" }
+  - { name: github, url: "https://github.com/flavio1110" }
+  - { name: codepen, url: "" }
+  - { name: stack-overflow, url: "" }
+  - { name: dribbble, url: "" }
+  - { name: behance, url: "" }
+  - { name: pinterest, url: "" }
+  - { name: tumblr, url: "" }
+  - { name: youtube, url: "" }
+  - { name: vimeo, url: "" }
+  - { name: vine, url: "" }
+  - { name: 500px, url: "" }
+  - { name: flickr, url: "" }
+  - { name: spotify, url: "" }
+  - { name: steam, url: "" }
+  - { name: wordpress, url: "" }
+  - { name: xing, url: "" }
+  - { name: bitcoin, url: "" }
+  - { name: pocket, url: "" }
+  - { name: applemusic, url: "" }
 
+# Modules Settings
+show_categories: 1
+show_tags: 1
+show_email: 1
+show_rss: 1
+show_comments: 1
+show_menu: 0
+fixed_sidebar: 1
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      comments: "false"
+
+# Serving
+url: "https://fsilva.me"
+baseurl: ""
+
+# Includes
+include: ["_pages"]
+
+# Outputting
+permalink: /:categories/:title.html
+category_dir: categories
+
+# Pagination
+paginate: 10
+paginate_path: "/page:num/"
+
+# Conversion
+markdown: kramdown
+excerpt_separator: <!--more-->
+
+# Assets Settings
 sass:
-  sass_dir: _sass
-# Exclude from processing.
-# The following items will not be processed, by default.
-# Any item listed under the `exclude:` key here will be automatically added to
-# the internal "default list".
-#
-# Excluded items can be processed by explicitly listing the directories or
-# their entries' file path in the `include:` list.
-#
-# exclude:
-#   - .sass-cache/
-#   - .jekyll-cache/
-#   - gemfiles/
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules/
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
+  sass_dir: assets/partials
+  style: compressed

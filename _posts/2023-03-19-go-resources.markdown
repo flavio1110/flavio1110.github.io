@@ -2,12 +2,16 @@
 layout: post
 title: "🧠 Go resources for beginners"
 date: 2023-03-19 14:00:00 +0100
-categories: blog
-excerpt: A living list of compiled links for whoever is learning Go or want to keep up to date with it
-show_excerpts: true
-banner: "images/gopher-side-eye.png"
-tags: ["go", "programming", "resources"]
+description: A living list of compiled links for whoever is learning Go or want to keep up to date with it
+tags:
+  - "go"
+  - "programming"
+  - "resources"
 ---
+
+<figure class="aligncenter">
+    <img src="{{ "images/gophers.png" | absolute_url }}" alt="Gopher side-eye" />
+</figure>
 
 Below a living list of compiled links for whoever is learning **Go**.
 
@@ -16,7 +20,11 @@ Below a living list of compiled links for whoever is learning **Go**.
 - **Effective Go** - <https://go.dev/doc/effective_go>
   - A document that gives tips for writing clear, idiomatic Go code. A must-read for any new Go programmer. It augments the tour and the language specification, both of which should be read first.
 - **Go Code Review Comments** <https://github.com/golang/go/wiki/CodeReviewComment>
+
   - This page collects common comments made during reviews of Go code, so that a single detailed explanation can be referred to by shorthands. This is a laundry list of common mistakes, not a comprehensive style guide. You can view this as a supplement to Effective Go.
+
+  <!--more-->
+
 - **Go Docs** - <https://go.dev/doc/>
   - Root for many useful documentations
 - **FAQ** - <https://go.dev/doc/faq>

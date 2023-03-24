@@ -1,42 +1,63 @@
 ---
 layout: default
 ---
-{%- assign banner = "images/banner.jpeg" -%}
-{% if page.banner != nil %}
-  {% assign banner = page.banner %}
-{% endif %}
-<div class="image main" data-position="center">
-  <img src="{{ banner | absolute_url }}" alt="" />
-</div>
-<div class="center-container">
-  <div class="text-size-9 ml-2" >
-    <a href="{{ "/" | absolute_url }}">Home</a> › <a href="{{ "/blog" | absolute_url }}">Blog</a> › <a href="{{ page.url | absolute_url }}">{{ page.title | escape }}</a>
-  </div>
-  <article class="h-entry mx-2 mt-1" itemscope itemtype="http://schema.org/BlogPosting">
-    <header class="">
-      <h1 class="text-size-20" itemprop="name headline">{{ page.title | escape }}</h1>
-      {%- include tags.html -%}
-      <p class="italic text-size-9">
-        <time class="" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
-          {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-          {{ page.date | date: date_format }}
-        </time>
+
+<article class="post single" role="article" itemscope itemtype="http://schema.org/BlogPosting">
+    <header class="post-header">
+        <ul>
+            <li><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%-d %b, %Y" }}</time></li>
+            {% if site.show_categories == 1 and page.category %}
+                {% if page.category %}
+                <li class="cats">
+                    {% for category in page.category %}
+                        <a href="{{site.baseurl}}/{{site.category_dir}}/{{category}}/">{{ category }}</a>
+                    {% endfor %}
+                </li>
+                {% endif %}
+            {% endif %}
+        </ul>
+        <h2 itemprop="name headline">{{ page.title }}</h2>
     </header>
 
-
-
-    <div class="" itemprop="articleBody">
-      {{ content }}
+    <div class="post-content">
+        {{ page.content }}
     </div>
 
-    {%- if site.disqus.shortname -%}
-      {%- include disqus_comments.html -%}
-    {%- endif -%}
+    <footer class="post-footer">
+        <div class="share">Share
+            <ul class="social-networks">
+                <li class="share-facebook"><a href="https://www.facebook.com/sharer.php?s=100&p[title]={{page.title | strip_html }}&p[summary]={{page.content | strip_html | truncate: 140 }}&p[url]={{ page.url | prepend: site.baseurl | prepend: site.url }}" class="s_facebook" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{{ site.baseurl | prepend: site.url }}/assets/svg/social-icons.svg#facebook-icon"></use></svg></a></li>
+                <li class="share-twitter"><a href="http://twitter.com/share?url={{page.url | prepend: site.baseurl | prepend: site.url | escape}}&text={{ page.content | strip_html | truncate: 140 }}&hashtags={% for tag in page.tags %}{{ tag }},{% endfor %}" rel="noreferrer" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{{ site.baseurl | prepend: site.url }}/assets/svg/social-icons.svg#twitter-icon"></use></svg></a></li>
+            </ul>
+        </div>
+        {% if site.show_tags == 1 and page.tags %}
+        <div class="tags">
+            <ul>
+                {% for tag in page.tags %}
+                <li><a href="{{ site.baseurl | prepend: site.url }}/tag/{{ tag }}">{{ tag }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+    </footer>
+</article>
 
-    <div class="text-right text-size-9" >
-      <a href="{{ "/blog" | absolute_url }}">View other posts</a> | <a href="#top">Go back to the top ↑</a>
-    </div>
-    
-    <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
-  </article>
-</div>
+{% if page.comments and site.show_comments == 1 %}
+<aside class="comments" role="complementary">
+    <div id="disqus_thread"></div>
+    <script>
+        var disqus_config = function () {
+            this.page.url = '{{ page.url | prepend: site.baseurl | prepend: site.url }}';
+            this.page.identifier = '{{ page.date | date: "%-m/%-d/%Y" }}';
+        };
+        (function() {
+            var d = document, s = d.createElement('script');
+
+            s.src = '//{{site.disqus}}.disqus.com/embed.js';
+
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+</aside>
+{% endif %}

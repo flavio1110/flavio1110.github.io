@@ -2,12 +2,17 @@
 layout: post
 title: "🔢 Go: Where is the decimal type?"
 date: 2023-03-21 14:00:00 +0100
-categories: blog
-excerpt: If you are coming from other languange backgrounds lile C# and Java, you probably wondered where is the decimal type in Go
-show_excerpts: true
-banner: "images/gopher-side-eye.png"
-tags: ["go", "programming", "gotchas"]
+mood: speechless
+description: If you are coming from other languange backgrounds lile C# and Java, you probably wondered where is the decimal type in Go
+tags:
+  - "go"
+  - "programming"
+  - "gotchas"
 ---
+
+<figure class="aligncenter">
+    <img src="{{ "images/gopher-side-eye.png" | absolute_url }}" alt="Gopher side-eye" />
+</figure>
 
 **Go** doesn't have a primitive `decimal` type for arbitrary-precision fixed-point decimal numbers. Yes, you read it right. Therefore, if you need to deal with fixed-point precision there are two main options:
 

@@ -1,9 +1,0 @@
-- name: Home
-  path: /
-  url: /
-- name: Blog
-  path: /blog
-  url: /blog.html
-- name: Contact
-  path: /contact
-  url: /contact.html
