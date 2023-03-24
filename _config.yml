@@ -1,8 +1,9 @@
 # General Settings
 name: Flavio Silva
+title: Flavio Silva
 job_title: Software engineer and stuff ッ
 email: flavio1110@gmail.com
-description: I'm fascinated about how tech can change people's lives and how we can tackle real-world problems with software. Hit me up using one of the channels, and we'll chat real soon! :)
+description: I'm fascinated about how tech can change people's lives and how we can tackle real-world problems with software. Hit me up using one of the channels below, and we'll chat real soon! :)
 avatar: https://fsilva.me/images/avatar.jpg
 favicon: images/favicon.ico
 twitter_handler: your_handler
@@ -38,12 +39,12 @@ social_networks:
   - { name: applemusic, url: "" }
 
 # Modules Settings
-show_categories: 1
+show_categories: 0
 show_tags: 1
 show_email: 1
-show_rss: 1
+show_rss: 0
 show_comments: 1
-show_menu: 0
+show_menu: 1
 fixed_sidebar: 1
 
 # Defaults
@@ -64,6 +65,10 @@ include: ["_pages"]
 # Outputting
 permalink: /:categories/:title.html
 category_dir: categories
+
+# Tags
+tag_page_layout: tag_index
+tag_page_dir: tag
 
 # Pagination
 paginate: 10

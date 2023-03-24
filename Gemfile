@@ -18,6 +18,7 @@ ruby RUBY_VERSION
 # If you have any plugins, put them here!
 group :jekyll_plugins do
     gem "jekyll-paginate", "~> 1.1.0"
+    gem 'jekyll-tagging'
     gem "wdm", "~> 0.1.1", :platforms => [:mingw, :x64_mingw, :mswin]
 end
 

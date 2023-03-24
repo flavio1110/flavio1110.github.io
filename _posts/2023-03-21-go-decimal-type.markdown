@@ -5,9 +5,9 @@ date: 2023-03-21 14:00:00 +0100
 mood: speechless
 description: If you are coming from other languange backgrounds lile C# and Java, you probably wondered where is the decimal type in Go
 tags:
-  - "go"
-  - "programming"
-  - "gotchas"
+  - go
+  - programming
+  - gotchas
 ---
 
 <figure class="aligncenter">

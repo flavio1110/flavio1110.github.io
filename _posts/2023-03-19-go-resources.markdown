@@ -4,9 +4,9 @@ title: "🧠 Go resources for beginners"
 date: 2023-03-19 14:00:00 +0100
 description: A living list of compiled links for whoever is learning Go or want to keep up to date with it
 tags:
-  - "go"
-  - "programming"
-  - "resources"
+  - go
+  - programming
+  - learning
 ---
 
 <figure class="aligncenter">
