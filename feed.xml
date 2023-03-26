@@ -1,30 +1,194 @@
----
-layout: null
----
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>{{ site.title | xml_escape }}</title>
-    <description>{{ site.description | xml_escape }}</description>
-    <link>{{ site.url }}{{ site.baseurl }}/</link>
-    <atom:link href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" rel="self" type="application/rss+xml"/>
-    <pubDate>{{ site.time | date_to_rfc822 }}</pubDate>
-    <lastBuildDate>{{ site.time | date_to_rfc822 }}</lastBuildDate>
-    <generator>Jekyll v{{ jekyll.version }}</generator>
-    {% for post in site.posts limit:10 %}
+    <title>Flavio Silva</title>
+    <description>I'm fascinated about how tech can change people's lives and how we can tackle real-world problems with software. Hit me up using one of the channels below, and we'll chat real soon! :)</description>
+    <link>https://fsilva.me/</link>
+    <atom:link href="https://fsilva.me/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Sun, 26 Mar 2023 17:54:52 +0000</pubDate>
+    <lastBuildDate>Sun, 26 Mar 2023 17:54:52 +0000</lastBuildDate>
+    <generator>Jekyll v3.9.3</generator>
+    
       <item>
-        <title>{{ post.title | xml_escape }}</title>
-        <description>{{ post.content | xml_escape }}</description>
-        <pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
-        <link>{{ post.url | prepend: site.baseurl | prepend: site.url }}</link>
-        <guid isPermaLink="true">{{ post.url | prepend: site.baseurl | prepend: site.url }}</guid>
-        {% for tag in post.tags %}
-        <category>{{ tag | xml_escape }}</category>
-        {% endfor %}
-        {% for cat in post.categories %}
-        <category>{{ cat | xml_escape }}</category>
-        {% endfor %}
+        <title>🔢 Go: Where is the decimal type?</title>
+        <description>&lt;figure class=&quot;aligncenter&quot;&gt;
+    &lt;img src=&quot;https://fsilva.me/images/gopher-side-eye.png&quot; alt=&quot;Gopher side-eye&quot; /&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;&lt;strong&gt;Go&lt;/strong&gt; doesn’t have a primitive &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;decimal&lt;/code&gt; type for arbitrary-precision fixed-point decimal numbers. Yes, you read it right. Therefore, if you need to deal with fixed-point precision there are two main options:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Use an external package like &lt;a href=&quot;https://github.com/shopspring/decimal&quot;&gt;decimal&lt;/a&gt;, which introduces the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;decimal&lt;/code&gt; type. However, the current version (1.3.1), can “only” represent numbers with a maximum of 2^31 digits after the decimal point.&lt;/li&gt;
+  &lt;li&gt;Use &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;int64&lt;/code&gt; to store and deal with these numbers. For e.g. given you need 6 precision digits, therefore &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;79.23&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;23.00&lt;/code&gt;, and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;54.123456&lt;/code&gt;, become respectively &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;79230000&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;23000000&lt;/code&gt;, and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;54123456&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;There is an &lt;a href=&quot;https://github.com/golang/go/issues/19787#issue-218228389&quot;&gt;open proposal&lt;/a&gt; to add decimal float types (IEEE 754-2008) in the std lib. However, for now, it’s just a proposal being discussed, without guarantee it will be ever added.&lt;/p&gt;
+</description>
+        <pubDate>Tue, 21 Mar 2023 13:00:00 +0000</pubDate>
+        <link>https://fsilva.me/go-decimal-type.html</link>
+        <guid isPermaLink="true">https://fsilva.me/go-decimal-type.html</guid>
+        
+        <category>go</category>
+        
+        <category>programming</category>
+        
+        <category>gotchas</category>
+        
+        
       </item>
-    {% endfor %}
+    
+      <item>
+        <title>🧠 Go resources for beginners</title>
+        <description>&lt;figure class=&quot;aligncenter&quot;&gt;
+    &lt;img src=&quot;https://fsilva.me/images/gophers.png&quot; alt=&quot;Gopher side-eye&quot; /&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;Below a living list of compiled links for whoever is learning &lt;strong&gt;Go&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;official-docs&quot;&gt;Official docs&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Effective Go&lt;/strong&gt; - &lt;a href=&quot;https://go.dev/doc/effective_go&quot;&gt;https://go.dev/doc/effective_go&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;A document that gives tips for writing clear, idiomatic Go code. A must-read for any new Go programmer. It augments the tour and the language specification, both of which should be read first.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Go Code Review Comments&lt;/strong&gt; &lt;a href=&quot;https://github.com/golang/go/wiki/CodeReviewComment&quot;&gt;https://github.com/golang/go/wiki/CodeReviewComment&lt;/a&gt;&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;This page collects common comments made during reviews of Go code, so that a single detailed explanation can be referred to by shorthands. This is a laundry list of common mistakes, not a comprehensive style guide. You can view this as a supplement to Effective Go.&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;!--more--&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Go Docs&lt;/strong&gt; - &lt;a href=&quot;https://go.dev/doc/&quot;&gt;https://go.dev/doc/&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Root for many useful documentations&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;FAQ&lt;/strong&gt; - &lt;a href=&quot;https://go.dev/doc/faq&quot;&gt;https://go.dev/doc/faq&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Answers to common questions about Go.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;blogs&quot;&gt;Blogs&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Dave Cheney&lt;/strong&gt; - &lt;a href=&quot;https://dave.cheney.net/&quot;&gt;https://dave.cheney.net/&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Specially the &lt;a href=&quot;https://dave.cheney.net/practical-go&quot;&gt;practical go section&lt;/a&gt;, it has TONS of good advice and real-world examples of how to deal with daily challenges. I highly recommend it.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;courses&quot;&gt;Courses&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;The way to go&lt;/strong&gt; - &lt;a href=&quot;https://www.educative.io/courses/the-way-to-go&quot;&gt;https://www.educative.io/courses/the-way-to-go&lt;/a&gt;&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;It’s a course from educative.io, it goes from the basics concepts of the language to more advanced ones. It also brings very interesting insights into the differences between the approaches of Java/C# to Go..&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;How to code in go&lt;/strong&gt; - &lt;a href=&quot;https://www.digitalocean.com/community/tutorial_series/how-to-code-in-go&quot;&gt;https://www.digitalocean.com/community/tutorial_series/how-to-code-in-go&lt;/a&gt;&lt;/p&gt;
+    &lt;ul&gt;
+      &lt;li&gt;A great collection of tutorials that cover basic Go concepts, ideal for beginers&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;videos&quot;&gt;Videos&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Go in 100 seconds&lt;/strong&gt; - &lt;a href=&quot;https://www.youtube.com/watch?v=446E-r0rXHI&amp;amp;t=38s&quot;&gt;https://www.youtube.com/watch?v=446E-r0rXHI&amp;amp;t=38s&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Short introduction about Go&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Simplicity is complicated&lt;/strong&gt; - &lt;a href=&quot;https://www.youtube.com/watch?v=rFejpH_tAHM&quot;&gt;https://www.youtube.com/watch?v=rFejpH_tAHM&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Rob Pike talks about how Go is often described as a simple language. It is not, it just seems that way. Rob explains how Go’s simplicity hides a great deal of complexity, and that both the simplicity and complexity are part of the design.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Concurrency is not parallelism&lt;/strong&gt; - &lt;a href=&quot;https://www.youtube.com/watch?v=qmg1CF3gZQ0&amp;amp;t=1582s&quot;&gt;https://www.youtube.com/watch?v=qmg1CF3gZQ0&amp;amp;t=1582s&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Rob Pike talks about concurrency and how Go implements it&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Understanding channels&lt;/strong&gt; - &lt;a href=&quot;https://www.youtube.com/watch?v=KBZlN0izeiY&amp;amp;t=1011s&quot;&gt;https://www.youtube.com/watch?v=KBZlN0izeiY&amp;amp;t=1011s&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Channels provide a simple mechanism for goroutines to communicate, and a powerful construct to build sophisticated concurrency patterns. We will delve into the inner workings of channels and channel operations, including how they’re supported by the runtime scheduler and memory&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Concurrency in Go&lt;/strong&gt; - &lt;a href=&quot;https://www.youtube.com/watch?v=\_uQgGS_VIXM&amp;amp;list=PLsc-VaxfZl4do3Etp_xQ0aQBoC-x5BIgJ&quot;&gt;https://www.youtube.com/watch?v=\_uQgGS_VIXM&amp;amp;list=PLsc-VaxfZl4do3Etp_xQ0aQBoC-x5BIgJ&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Playlist with a few short videos about different components of concurrency in Go&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Just for func&lt;/strong&gt; - &lt;a href=&quot;https://www.youtube.com/watch?v=H_4eRD8aegk&amp;amp;list=PL64wiCrrxh4Jisi7OcCJIUpguV_f5jGnZ&quot;&gt;https://www.youtube.com/watch?v=H_4eRD8aegk&amp;amp;list=PL64wiCrrxh4Jisi7OcCJIUpguV_f5jGnZ&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;A very complete playlist of tutorials given by Francesc Campoy, a past Developer Advocate for the Go team at Google, that cover simple to advanced topics in Go&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Golang crash course&lt;/strong&gt; - &lt;a href=&quot;https://www.youtube.com/watch?v=SqrbIlUwR0U&quot;&gt;https://www.youtube.com/watch?v=SqrbIlUwR0U&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;A 90 minutes video that covers most of Go features with cristal clear live coding examples, excelent for beginers to get a fast gist of Go&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;podcasts&quot;&gt;Podcasts&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Go Time&lt;/strong&gt; - &lt;a href=&quot;https://open.spotify.com/show/2cKdcxETn7jDp7uJCwqmSE&quot;&gt;Spotify&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Diverse discussions from around the Go and its community&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Sun, 19 Mar 2023 13:00:00 +0000</pubDate>
+        <link>https://fsilva.me/go-resources.html</link>
+        <guid isPermaLink="true">https://fsilva.me/go-resources.html</guid>
+        
+        <category>go</category>
+        
+        <category>programming</category>
+        
+        <category>learning</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>👋 Welcome</title>
+        <description>&lt;figure class=&quot;aligncenter&quot;&gt;
+    &lt;img src=&quot;https://fsilva.me/images/code-banner.png&quot; alt=&quot;Gopher side-eye&quot; /&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;Welcome, here I’ll be sharing my discoveries, studies, and experiences in the software industry. As a software engineer, I’ve had the opportunity to work on a variety of projects and technologies, and I’ve learned a lot along the way.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;My goal in creating this blog is to document my journey and share what I’ve learned with others. Whether you’re a seasoned developer or just starting out, I hope that the insights and knowledge I share will be useful and valuable to you.&lt;/p&gt;
+
+&lt;p&gt;In this blog, you can expect to find posts about various topics related to software engineering, such as programming languages, frameworks, tools, best practices, and more. I’ll also share my thoughts on the latest trends and developments in the industry.&lt;/p&gt;
+
+&lt;p&gt;Above all, I hope that this blog will inspire you to continue learning and growing as a software engineer. Thanks for stopping by, and I look forward to sharing my experiences with you.&lt;/p&gt;
+</description>
+        <pubDate>Sun, 19 Mar 2023 13:00:00 +0000</pubDate>
+        <link>https://fsilva.me/welcome.html</link>
+        <guid isPermaLink="true">https://fsilva.me/welcome.html</guid>
+        
+        <category>thougths</category>
+        
+        
+      </item>
+    
   </channel>
 </rss>
