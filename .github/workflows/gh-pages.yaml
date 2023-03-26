@@ -5,33 +5,26 @@ on:
       - master
   workflow_dispatch:
 
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-concurrency:
-  group: "pages"
-  cancel-in-progress: false
-
 jobs:
   github-pages:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-      - name: Setup Ruby
-        uses: ruby/setup-ruby@v1
+      - uses: actions/checkout@v2
         with:
-          ruby-version: "3.1"
-          bundler-cache: true
-          cache-version: 0
-      - name: Setup Pages
-        id: pages
-        uses: actions/configure-pages@v3
-      - name: Build with Jekyll
-        run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
-        env:
-          JEKYLL_ENV: production
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
+          ref: master
+
+      # Use GitHub Actions' cache to shorten build times and decrease load on servers
+      - uses: actions/cache@v2
+        with:
+          path: vendor/bundle
+          key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile') }}
+          restore-keys: |
+            ${{ runner.os }}-gems-
+
+      # Standard usage
+      - uses: helaili/jekyll-action@v2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          target_branch: gh-pages
+          target_path: /
+          keep_history: true
