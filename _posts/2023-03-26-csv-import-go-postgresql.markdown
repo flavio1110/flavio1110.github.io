@@ -35,11 +35,11 @@ This is not a big deal when dealing with small files, there won't be concurrent 
 
 Comparing the memory consumption for the two distinct approaches importing a file with ~16MB (1M rows).
 
-| Approach/metric  |     |  TotalAlloc |     |          Sys |     |        Objs |
-| ---------------- | --- | ----------: | --- | -----------: | --- | ----------: |
-| Stream file      |     |      61 MiB |     |       12 Mib |     |     4002227 |
-| Read entire file |     |      84 MiB |     |       58 Mib |     |     4002300 |
-|                  |     | **+37.70%** |     | **+346.15%** |     | **+74.96%** |
+| Approach/metric  |     |  TotalAlloc |     |          Sys |
+| ---------------- | --- | ----------: | --- | -----------: |
+| Stream file      |     |      61 MiB |     |       12 Mib |
+| Read entire file |     |      84 MiB |     |       58 Mib |
+|                  |     | **+37.70%** |     | **+346.15%** |
 
 **Yes,** you read it right! using `CopyFromRows` obtained +346.15% of memory from the OS! 58 MiB instead of 12 MiB.
 
