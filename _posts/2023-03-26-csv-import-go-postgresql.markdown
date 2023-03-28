@@ -16,19 +16,19 @@ tags:
 </figure>
 
 If you are using Go ad PostgreSQL, and need to performa a bulk import a CSV,
-it's most likely you will find the `COPY` protocol is the [feature](https://www.postgresql.org/docs/current/sql-copy.html) that suits you better.
-In that direction, you will find examples using [pgx](https://github.com/jackc/pgx) [CopyFrom](https://pkg.go.dev/github.com/jackc/pgx/v4#Conn.CopyFrom) that relies on the native protocol, and it's fairly easy to use.
+it's most likely you will find the `COPY` protocol is the [feature](https://www.postgresql.org/docs/current/sql-copy.html){:target="\_blank"} that suits you better.
+In that direction, you will find examples using [pgx](https://github.com/jackc/pgx) [CopyFrom](https://pkg.go.dev/github.com/jackc/pgx/v4#Conn.CopyFrom){:target="\_blank"} that relies on the native protocol, and it's fairly easy to use.
 **However, depending how it's used you can have an exponencial increase of memory consumption of your application making it unreliable and more expensive to run.**
 
 <!--more-->
 
 > TL;DR;: **Don't** load the file in memory and use `pgx.CopyFromRows`. Instead, use the `io.Reader` of the file and implement a custom `pgx.CopyFromSource`.
 
-[Checkout the repository with examples and details presented here](https://github.com/flavio1110/large-csv-to-pgsql).
+[Checkout the repository with examples and details presented here](https://github.com/flavio1110/large-csv-to-pgsql){:target="\_blank"}.
 
 ### Context
 
-Most of the examples out there, are either using [CopyFromRows](https://pkg.go.dev/github.com/jackc/pgx/v4#CopyFromRows) or [CopyFromSlice](https://pkg.go.dev/github.com/jackc/pgx/v4#CopyFromSlice). However, the big problem is these two options require you to have the entire content in memory to use.
+Most of the examples out there, are either using [CopyFromRows](https://pkg.go.dev/github.com/jackc/pgx/v4#CopyFromRows){:target="\_blank"} or [CopyFromSlice](https://pkg.go.dev/github.com/jackc/pgx/v4#CopyFromSlice){:target="\_blank"}. However, the big problem is these two options require you to have the entire content in memory to use.
 This is not a big deal when dealing with small files, there won't be concurrent usage, or you have infinite memory 😅.
 
 ### How big is the problem?
@@ -43,7 +43,7 @@ Comparing the memory consumption for the two distinct approaches importing a fil
 
 **Yes,** you read it right! using `CopyFromRows` obtained +346.15% of memory from the OS! 58 MiB instead of 12 MiB.
 
-_You can read more about the meaning of each metric on <https://golang.org/pkg/runtime/#MemStats> and find the source code and details of the comparisson on [this repository](https://github.com/flavio1110/large-csv-to-pgsql).._
+_You can read more about the meaning of each metric on <https://golang.org/pkg/runtime/#MemStats> and find the source code and details of the comparisson on [this repository](https://github.com/flavio1110/large-csv-to-pgsql){:target="\_blank"}.._
 
 ### What's the most efficient way for using the COPY protocol with pgx?
 
@@ -51,7 +51,7 @@ Instead of reading the entire in memory, the idea is to stream each line of the 
 
 #### How can we do it?
 
-The [CopyFrom](https://github.com/jackc/pgx/blob/master/copy_from.go#LL238C21-L238C21) method receives an implementation of the interface [CopyFromSource](https://github.com/jackc/pgx/blob/master/copy_from.go#L68).
+The [CopyFrom](https://github.com/jackc/pgx/blob/master/copy_from.go#LL238C21-L238C21){:target="\_blank"} method receives an implementation of the interface [CopyFromSource](https://github.com/jackc/pgx/blob/master/copy_from.go#L68){:target="\_blank"}.
 
 Let's implement this interface using a CSV file with the followng three columns: first_name, last_name, and city.
 
@@ -130,6 +130,6 @@ _, err := pgxConn.CopyFrom(ctx, pgx.Identifier{"people"}, peopleColumns, newPeop
 
 Using the `CopyFrom` with `CopyFromRows` or `CopyFrom` will significantly increase the memory comsultion of your application. The high memory usage can bring several problems like OOM errors, increase of costs, unavailability, etc.
 
-By using a custom implementation of [CopyFromSource](https://github.com/jackc/pgx/blob/master/copy_from.go#L68) will make your application much more efficient, reliable, and cheaper to ru.
+By using a custom implementation of [CopyFromSource](https://github.com/jackc/pgx/blob/master/copy_from.go#L68){:target="\_blank"} will make your application much more efficient, reliable, and cheaper to ru.
 
-You can find the entire source code of the examples above on [this repository](https://github.com/flavio1110/large-csv-to-pgsql). There you will also find more deatils about the comparisson and the not-so-great implementation.
+You can find the entire source code of the examples above on [this repository](https://github.com/flavio1110/large-csv-to-pgsql){:target="\_blank"}. There you will also find more deatils about the comparisson and the not-so-great implementation.
