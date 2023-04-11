@@ -6,14 +6,19 @@
 <script src="{{ site.baseurl | prepend: site.url }}/assets/js/svg4everybody.min.js"></script>
 <script src="{{ site.baseurl | prepend: site.url }}/assets/js/scripts.js"></script>
 
-{% if site.analytics_code != null %}>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-77HRLY1L61"></script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+{% if site.analytics_code != null and jekyll.environment == "production" %}>
+<!-- Google tag (gtag.js) -->
+<script
+  async
+  src="https://www.googletagmanager.com/gtag/js?id=G-77HRLY1L61"
+></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
 
-    gtag('config', '{{site.analytics_code}}');
-    </script>
+  gtag("config", "{{site.analytics_code}}");
+</script>
 {% endif %}
