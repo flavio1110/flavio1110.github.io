@@ -119,7 +119,7 @@
 				&:hover { color: $grey-color-light; }
 			}
 
-			a { color: $primary-color; border-bottom: 1px solid $primary-color; @include transition(border .1s ease);
+			a { color: $primary-color; border-bottom: 1px solid $primary-color; @include transition(border .1s ease); word-break :break-all;
 				&:hover { border: none; }
 			}
 
