@@ -229,3 +229,31 @@
 		border: 1px;
 	}
 }
+.recomendation {	
+	h2 {
+		margin:20px auto;
+		margin-left: 10px;
+	}
+}
+.grid {
+	display: grid;
+	gap:10px;
+	grid-template-columns: repeat( auto-fit, minmax(200px, 1fr));;
+}
+.post-card {
+	border: solid 1px $grey-color-lightest;
+	height: 100%;
+	box-shadow: 0 2px 3px rgba($black,.05);
+	border-radius: 5px;
+	padding: 10px;
+	cursor: pointer;
+	h4 {
+		margin-bottom:10px;
+	}
+	p {
+		line-height: 20px;
+	}
+	&:hover {
+		background-color: $grey-color-lightest;
+	}
+}
