@@ -76,9 +76,17 @@ paginate_path: "/page:num/"
 
 # Conversion
 markdown: kramdown
+
 excerpt_separator: <!--more-->
 
 # Assets Settings
 sass:
   sass_dir: assets/partials
   style: compressed
+
+kramdown:
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    block:
+      line_numbers: true
+      bold_every: 5

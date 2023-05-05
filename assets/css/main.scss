@@ -245,7 +245,7 @@
 	height: 100%;
 	box-shadow: 0 2px 3px rgba($black,.05);
 	border-radius: 5px;
-	padding: 10px;
+	padding: 15px;
 	cursor: pointer;
 	h4 {
 		margin-bottom:10px;
@@ -256,4 +256,26 @@
 	&:hover {
 		background-color: $grey-color-lightest;
 	}
+}
+td.rouge-gutter.gl {
+	padding-inline: 0.2rem;
+	vertical-align: baseline;
+	border-right: solid 1px $grey-color-lightest;
+	margin-left: 0.2rem;
+	min-width: 30px;
+}
+
+.rouge-table {
+	min-width: 1024px;
+	
+}
+.the-content .post .post-content div.highlight {
+	overflow: auto;
+	padding: 0;
+}
+.the-content .post .post-content div.highlight .lineno{
+	padding: 0;
+}
+td.rouge-code{
+	padding-left:0.2rem;
 }

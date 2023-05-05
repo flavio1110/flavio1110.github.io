@@ -139,11 +139,10 @@ _, err = w.Commit("commit yay!", &git.CommitOptions{}) // commit
 exitIfError(err)
 ```
 
-I have to say that for basic operations like this one, we could be better served by executing the git cli directly like the example below. However, _go-git_ open several possibilities like in the support of several type of storage, such as in-memory, file system, or anything you can think of as long as you implement the [`Storer`](https://pkg.go.dev/github.com/go-git/go-git/v5/plumbing/storer){:target="\_blank"} interface.
+I have to say that for basic operations like this one, we could be better served by executing the git cli directly like in the example below. However, _go-git_ opens several possibilities like in the support of several type of storage, such as in-memory, file system, or anything you can think of as long as you implement the [`Storer`](https://pkg.go.dev/github.com/go-git/go-git/v5/plumbing/storer){:target="\_blank"} interface.
 At this moment I'm not using such features yet, but I'm planning to use them for some commands like `got squash` that will squash all commits of the current branch.
 
 ```go
-
 cmd := exec.Command("git", "add", "-A")
 cmd.Stdout = os.Stdout
 cmd.Stderr = os.Stdout
@@ -165,7 +164,6 @@ Implementing it was fairly simple.
 _The snippet below is part of the [`root.go`](https://github.com/flavio1110/got/blob/main/cmd/root.go){:target="\_blank"}_
 
 ```go
-
 func Execute() {
 	err := rootCmd.Execute()
 	if err != nil {
