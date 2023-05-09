@@ -10,7 +10,7 @@ tags:
 ---
 
 <figure class="aligncenter">
-    <img src="{{ "images/gophers.png" | absolute_url }}" alt="Gopher side-eye" />
+    <img src="{{ "images/gophers.webp" | absolute_url }}" alt="Gopher side-eye" />
 </figure>
 
 Below a living list of compiled links for whoever is learning **Go**.

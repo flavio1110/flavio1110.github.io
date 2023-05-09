@@ -11,7 +11,9 @@ tags:
 ---
 
 <figure class="aligncenter">
-  <img src="{{ "images/design-responsive.gif" | absolute_url }}" alt="Example of a responsive design" />
+  <video autoplay loop muted playsinline>
+    <source src="{{"images/design-responsive.mp4" | absolute_url }}" type="video/mp4" />
+  </video>
 </figure>
 
 When studying HTML, CSS, and Javascript it's hard to practice with real-world examples, so oftentimes we get stuck trying to come up with a good design and then building it.
@@ -29,7 +31,7 @@ After creating your account, you can start one of its [challeges](https://www.fr
 Once you start a challenge, you will download a zip for that challenge. For example the challenge [Four card feature section](https://www.frontendmentor.io/challenges/four-card-feature-section-weK1eFYK), will give you a zip file containing the instructions, necessary images, basic design details, and the most important the design images for desktop and mobile!
 
 <figure class="aligncenter">
-  <img src="{{ "images/four-card-feature-files.png" | absolute_url }}" alt="File tree for Four cards feature section challenge" />
+  <img src="{{ "images/four-card-feature-files.webp" | absolute_url }}" alt="File tree for Four cards feature section challenge" />
 </figure>
 
 These files are all you need to start hacking your front end!

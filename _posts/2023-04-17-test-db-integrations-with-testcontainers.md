@@ -22,7 +22,7 @@ Picture this, you have a critical and reasonably complicated piece of logic in y
 ### Back in the ancient days...
 
 <figure class="aligncenter">
-  <img src="{{ "images/caveofhands.jpeg" | absolute_url }}" alt="Ancient cave art of many hand prints." />
+  <img src="{{ "images/caveofhands.webp" | absolute_url }}" alt="Ancient cave art of many hand prints." />
   <figcaption> Ancient cave art of many hand prints. (Credit: Petr Kratochvila/Shutterstock)</figcaption>
 </figure>
 
@@ -50,7 +50,7 @@ Because of the cost and flakiness of such tests, in many cases, the **_solution_
 With the popularization of containers, not only developing, runnings, and deploying became easier, but also integrating and testing your external dependencies became easier, faster, and more dependable.
 
 <figure class="aligncenter">
-  <img src="{{ "images/containers-everywhere.jpg" | absolute_url }}" alt="Meme Buzzlightier saying to Wood: Containers Everywhere" />
+  <img src="{{ "images/containers-everywhere.webp" | absolute_url }}" alt="Meme Buzzlightier saying to Wood: Containers Everywhere" />
 </figure>
 
 We can now effortlessly run not only the regular dependencies, like RDBMSs and Message Brokers, but we can emulate many cloud provider services using tools like [localstack](https://docs.localstack.cloud/overview/){:target="\_blank"}.

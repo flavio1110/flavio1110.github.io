@@ -9,7 +9,7 @@ tags:
 ---
 
 <figure class="aligncenter">
-    <img src="{{ "images/code-banner.png" | absolute_url }}" alt="Gopher side-eye" />
+    <img src="{{ "images/code-banner.webp" | absolute_url }}" alt="Gopher side-eye" />
 </figure>
 
 Welcome, here I'll be sharing my discoveries, studies, and experiences in the software industry. As a software engineer, I've had the opportunity to work on a variety of projects and technologies, and I've learned a lot along the way.

@@ -11,7 +11,7 @@ tags:
 ---
 
 <figure class="aligncenter">
-    <img src="{{ "images/gopher-side-eye.png" | absolute_url }}" alt="Gopher side-eye" />
+    <img src="{{ "images/gopher-side-eye.webp" | absolute_url }}" alt="Gopher side-eye" />
 </figure>
 
 **Go** doesn't have a primitive `decimal` type for arbitrary-precision fixed-point decimal numbers. Yes, you read it right. Therefore, if you need to deal with fixed-point precision there are two main options:

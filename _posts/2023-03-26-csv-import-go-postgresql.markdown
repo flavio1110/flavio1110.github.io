@@ -12,7 +12,7 @@ tags:
 ---
 
 <figure class="aligncenter">
-    <img src="{{ "images/csv-rainbow.png" | absolute_url }}" alt="contents of a CSV file with each column in a different color" />
+    <img src="{{ "images/csv-rainbow.webp" | absolute_url }}" alt="contents of a CSV file with each column in a different color" />
 </figure>
 
 If you are using Go ad PostgreSQL, and need to performa a bulk import a CSV,
