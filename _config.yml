@@ -71,7 +71,7 @@ tag_page_layout: tag_index
 tag_page_dir: tag
 
 # Pagination
-paginate: 10
+paginate: 5
 paginate_path: "/page:num/"
 
 # Conversion
