@@ -153,6 +153,60 @@ tags:
 - ❌ Bullet points where prose works better
 - ❌ Hiding which repositories are involved — always link the actual repo
 
+## Avoiding AI Tells
+
+Posts on this blog are first-person notes, not LLM output. The patterns below are how readers (and reviewers) spot LLM-written text at a glance. If a draft contains more than a couple of these, rewrite it. The goal is not to banish every common construction — the goal is to make sure each sentence reads like something a person typed, not something a model statistically completed.
+
+### Punctuation
+
+- **Em dashes (`—`).** The single biggest give-away. One per post is fine; three is a smell; five or more means the text was generated. Prefer commas, periods, colons, or parentheses. Use an em dash only when the parenthetical truly interrupts and cannot be rephrased cleanly. Most "punchy" em-dash usages can be rewritten as two sentences.
+- **Curly quotes (`"…"`, `'…'`).** Use straight ASCII quotes (`"…"`, `'…'`). Curly quotes are a ChatGPT default.
+- **Trailing-negation clauses** ("…, no guessing.", "…, no wasted motion."). Rewrite as a real clause. "The options come from the selected item, without forcing the user to guess."
+- **Negative parallelisms** ("It's not just X, it's Y.", "Not only… but also…"). Use sparingly. Most can be collapsed into a single positive sentence.
+
+### Word Choice
+
+- **AI-vocabulary words.** Avoid: *crucial, delve, emphasizing, enduring, enhance, fostering, garner, highlight, interplay, intricate, landscape (abstract), pivotal, showcase, tapestry (abstract), testament, underscore (verb), valuable, vibrant, leverage, robust, seamless, holistic, dive (verb), navigate (figurative), realm, in today's, in the world of.*
+- **Promotional adjectives.** *breathtaking, vibrant, stunning, groundbreaking (figurative), nestled, in the heart of, must-visit.* None of these belong in a technical post.
+- **Significance inflation.** *stands as, serves as, is a testament, marks a pivotal moment, reflects broader trends, a key turning point.* Strip the puffery; state the fact.
+- **Persuasive-authority tropes.** *the real question is, at its core, in reality, what really matters, fundamentally, the deeper issue.* These phrases pretend to cut through noise; usually they just restate the obvious with extra ceremony. Cut them.
+- **Signposting / announcements.** *Let's dive in, let's explore, let's break this down, here's what you need to know, without further ado.* Just start the next paragraph.
+- **Collaborative artifacts.** *I hope this helps, Of course!, Certainly!, Great question!, let me know if.* These belong in chat replies, not blog posts.
+- **Hedge stacks.** *could potentially possibly be argued that… might have some.* Pick one hedge or none.
+
+### Sentence & Paragraph Shape
+
+- **Rule of three.** "Autonomous enough, deterministic enough, small enough." "Detect, propose, persist." These three-beat rhymes are an LLM favourite because the rhythm is statistically attractive. Allow them only when the three are genuinely the same kind of thing. Otherwise, break the third item into its own sentence or paragraph.
+- **Tailing fragments.** Ending a sentence with "and that's what matters.", "and the rest follows.", "— full stop." for emphasis. Use a real sentence.
+- **Inline-header vertical lists.** `- **Speed:** Code generation is faster.` `- **Quality:** Output is cleaner.` `- **Adoption:** More teams use it.` If the bolded label is just a topic and the sentence after it is the actual point, write prose: "Code generation is faster, output is cleaner, and adoption is growing."
+- **Fragmented headers.** A heading followed by a one-line warm-up that restates the heading ("## Performance\n\nSpeed matters.\n\nWhen users hit a slow page, they leave."). Cut the warm-up line.
+- **Synonym cycling.** AI substitutes synonyms to dodge its own repetition penalty. If "protagonist" / "main character" / "central figure" / "hero" all appear in three paragraphs, use "protagonist" each time or restructure.
+
+### Lists & Structure
+
+- **Bullet points where prose works.** Three short bullets that say one thing each are usually one paragraph.
+- **Bullets that all start with the same word pattern** ("The X is…", "The X is…", "The X is…"). Vary the sentence structure inside the bullets or fold them into prose.
+- **Title Case in headings.** Use sentence case ("The traps, in order", not "The Traps, In Order"). Existing posts are already sentence case.
+- **Decorative emoji in headings or bullets** (`🚀`, `💡`, `✅`). Emojis are fine in the title; not inside the body.
+- **False ranges.** "From X to Y, from A to B" where X/Y/A/B are not on a real scale. Replace with the actual list.
+
+### Structure (Post-level)
+
+- **Outline-like "Challenges and future prospects" section.** LLM writing pads the end with a generic "challenges remain, but the future is bright" paragraph. If something is genuinely limiting, write it as a specific tradeoff with a name and a number. If not, cut it.
+- **Generic positive conclusion.** "The future looks bright.", "Exciting times lie ahead.", "A major step forward." These are filler. Replace with the next concrete thing you plan to do, or end with a question to the reader.
+
+### Self-Check Before Publishing
+
+Read the draft aloud. If any of the following happens, rewrite:
+
+1. You used more than one em dash in a paragraph.
+2. You used a three-beat rhythm where the third item was forced into the shape.
+3. A bullet list has more than three items and each item starts with the same word.
+4. The conclusion is a generic upbeat paragraph rather than a concrete next step or a question.
+5. A sentence uses *crucial*, *pivotal*, *delve*, *showcase*, *leverage*, *robust*, or *seamless*.
+
+The existing posts on this blog are the reference for what "human voice" looks like. When in doubt, re-read *rinha-de-backend* and *got* and copy their rhythm: short paragraphs, varied sentence length, code that earns its place, lessons that come from a specific failure.
+
 ## Style Checklist (per post)
 
 1. Frontmatter matches the schema above (emoji + short title, 14:00 +0100, mood, description, 3–5 tags).
@@ -161,7 +215,7 @@ tags:
 4. First paragraph is short (1–3 sentences) and leads with the artifact / story / hook — not a generic intro.
 5. Every external link uses `{:target="\_blank"}`.
 6. Code blocks have a language tag and are introduced, not dropped.
-7. Voice is first-person and direct. No "we should", no marketing tone.
+7. Voice is first-person and direct. No "we should", no marketing tone. No AI tells (see *Avoiding AI Tells* above).
 8. Length matches the post type: short note → 1–2 paragraphs; tutorial → 100–200 lines; deep dive → 200–300 lines.
-9. Closes with forward-looking note, sign-off, or question to the reader.
+9. Closes with forward-looking note, sign-off, or question to the reader — not a generic upbeat paragraph.
 10. No fabricated technical claims — link to real repos / docs.
