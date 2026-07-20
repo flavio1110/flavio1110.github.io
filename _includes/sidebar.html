@@ -75,6 +75,7 @@
                     {%- assign bucket = 3 -%}
                 {%- endif -%}
                 <a class="set-{{ bucket }}" href="{{ site.baseurl }}/tag/{{ name | slugify }}/">{{ name }}</a>
+                <!--DEBUG count={{ count }} min={{ tag_min }} max={{ tag_max }} range={{ tag_range }} bucket={{ bucket }}-->
             {%- endfor -%}
         {%- endif -%}
     </div>
