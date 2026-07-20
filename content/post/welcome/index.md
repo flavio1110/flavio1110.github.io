@@ -1,6 +1,6 @@
 ---
 title: "👋 Welcome"
-date: 2023-03-19T14:00:00+01:00
+date: 2023-03-19T18:47:00+01:00
 slug: welcome
 description: I'll be sharing my discoveries, studies, and experiences in the software industry. As a software engineer
 image: code-banner.webp
