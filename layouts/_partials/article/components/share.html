@@ -1,0 +1,23 @@
+{{- $url := .Permalink -}}
+{{- $title := .Title -}}
+{{- $xQuery := querify "url" $url "text" $title -}}
+{{- $linkedinQuery := querify "url" $url -}}
+{{- $blueskyQuery := querify "text" (printf "%s %s" $title $url) -}}
+{{- $whatsappQuery := querify "text" (printf "%s %s" $title $url) -}}
+<section class="article-share inline-meta">
+    <a class="share-x" href="https://x.com/intent/post?{{ $xQuery | safeURL }}" target="_blank" rel="noopener noreferrer" aria-label="Share on X">
+        {{ partial "helper/icon" "brand-x" }}
+    </a>
+    <a class="share-linkedin" href="https://www.linkedin.com/sharing/share-offsite/?{{ $linkedinQuery | safeURL }}" target="_blank" rel="noopener noreferrer" aria-label="Share on LinkedIn">
+        {{ partial "helper/icon" "brand-linkedin" }}
+    </a>
+    <a class="share-bluesky" href="https://bsky.app/intent/compose?{{ $blueskyQuery | safeURL }}" target="_blank" rel="noopener noreferrer" aria-label="Share on Bluesky">
+        {{ partial "helper/icon" "brand-bluesky" }}
+    </a>
+    <a class="share-whatsapp" href="https://wa.me/?{{ $whatsappQuery | safeURL }}" target="_blank" rel="noopener noreferrer" aria-label="Share on WhatsApp">
+        {{ partial "helper/icon" "brand-whatsapp" }}
+    </a>
+    <button type="button" class="share-copy" data-share-url="{{ $url }}" aria-label="Copy link">
+        {{ partial "helper/icon" "link" }}
+    </button>
+</section>
