@@ -1,14 +1,6 @@
-.PHONY: serve
-serve:
-	@bundle exec jekyll serve
-
-.PHONY: install
-install:
-	@sudo bundle install
-
-# Hugo (hugo-migration branch) — pinned version, single source of truth here.
-# Must match the pin comment in config/_default/hugo.toml and the image tag in
-# .github/workflows/hugo-ci.yml.
+# Hugo — pinned version, single source of truth here. Must match the pin
+# comment in config/_default/hugo.toml and the image tag in
+# .github/workflows/hugo-ci.yml / hugo-deploy.yml.
 HUGO_VERSION := 0.164.0
 HUGO_IMAGE := hugomods/hugo:$(HUGO_VERSION)
 

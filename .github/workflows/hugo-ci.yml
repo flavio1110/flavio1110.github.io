@@ -1,6 +1,6 @@
-# Hugo build check for the Jekyll -> Hugo migration.
-# Build-only: catches broken templates/content on every push. Deploys nothing —
-# Jekyll on `master` keeps deploying via the untouched jekyll.yml.
+# Build-only check for the hugo-migration branch and PRs into it. Catches
+# broken templates/content before they land. Deploys nothing — production
+# deploys happen from `master` via hugo-deploy.yml.
 # Pinned HUGO_VERSION below must match the pin documented at the top of
 # config/_default/hugo.toml (and the Makefile).
 name: Hugo CI
