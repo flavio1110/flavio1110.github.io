@@ -37,3 +37,9 @@ theme = "hugo-theme-stack"
             unsafe = true
     [markup.highlight]
         noClasses = false
+        codeFences = true
+        guessSyntax = true
+        lineNoStart = 1
+        lineNos = true
+        lineNumbersInTable = true
+        tabWidth = 4
