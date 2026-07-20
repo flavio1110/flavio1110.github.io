@@ -8,14 +8,13 @@ on:
   pull_request:
     branches: ["hugo-migration"]
 
-env:
-  HUGO_VERSION: "0.164.0"
-
 jobs:
   build:
     runs-on: ubuntu-latest
+    # Pinned Hugo version — the `env` context isn't available in `container.image`,
+    # so this can't reference a single shared env var. Must match hugo.toml/Makefile.
     container:
-      image: hugomods/hugo:${{ env.HUGO_VERSION }}
+      image: hugomods/hugo:0.164.0
     steps:
       - name: Checkout
         uses: actions/checkout@v4
