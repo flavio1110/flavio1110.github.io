@@ -1,0 +1,24 @@
+mainSections = ["post"]
+favicon = "/images/favicon.ico"
+
+[sidebar]
+    avatar = "img/avatar.webp"
+    subtitle = "Software engineer and stuff ッ"
+
+[footer]
+    since = 2023
+
+[colorScheme]
+    toggle = true
+    default = "auto"
+
+[widgets]
+    homepage = [
+        { type = "search" },
+        { type = "archives" },
+        { type = "tag-cloud" },
+    ]
+    page = [{ type = "toc" }]
+
+[comments]
+    enabled = false
