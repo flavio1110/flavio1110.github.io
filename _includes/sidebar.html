@@ -60,6 +60,7 @@
             {%- assign tag_max = tag_min -%}
             {%- for t in site.tags -%}
                 {%- assign c = t[1].size -%}
+                TAGDEBUG t[0]={{ t[0] }} t[1]={{ t[1] }} t[1].size={{ t[1].size }} c={{ c }}
                 {%- if c > tag_max -%}{%- assign tag_max = c -%}{%- endif -%}
                 {%- if c < tag_min -%}{%- assign tag_min = c -%}{%- endif -%}
             {%- endfor -%}
