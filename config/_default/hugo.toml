@@ -8,7 +8,7 @@
 
 baseURL = "https://fsilva.me/"
 title = "Flavio Silva"
-theme = "hugo-theme-stack"
+theme = "this-theme-does-not-exist"
 
 [languages.en]
     locale = "en-us"
