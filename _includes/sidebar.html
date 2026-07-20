@@ -55,7 +55,7 @@
             CSS hooks in assets/css/main.scss (lines 220-224) and the
             tag_page_dir / tag_page_layout settings in _config.yml
         {%- endcomment -%}
-        {%- if site.tags and site.tags != empty -%}
+        {%- if site.tags.size > 0 -%}
             {%- assign tag_min = site.tags[0][1].size -%}
             {%- assign tag_max = tag_min -%}
             {%- for t in site.tags -%}
