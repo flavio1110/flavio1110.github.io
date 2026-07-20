@@ -40,6 +40,42 @@
     {% endif %}
 
     <div class="tag-cloud">
-        {{ site | tag_cloud }}
+        {%- comment -%}
+          Manual tag-cloud replacement. The previous `{{ site | tag_cloud }}`
+          relied on the jekyll-tagging plugin, which no longer ships a working
+          `tag_cloud` filter on the current GitHub Pages build — leaving the
+          literal "Jekyll::Drops::SiteDrop" rendered to the page.
+
+          Replicates the plugin's behaviour without the dependency:
+          - iterates site.tags
+          - assigns each tag to one of 5 buckets (set-1..set-5)
+          - buckets distribute by post count (min→1, max→5, linear in between)
+            so new tags slot in automatically and heavier tags stay larger
+          - emits <a class="set-N" href="/tag/<slug>/">name</a>, matching the
+            CSS hooks in assets/css/main.scss (lines 220-224) and the
+            tag_page_dir / tag_page_layout settings in _config.yml
+        {%- endcomment -%}
+        {%- if site.tags and site.tags != empty -%}
+            {%- assign tag_min = site.tags[0][1].size -%}
+            {%- assign tag_max = tag_min -%}
+            {%- for t in site.tags -%}
+                {%- assign c = t[1].size -%}
+                {%- if c > tag_max -%}{%- assign tag_max = c -%}{%- endif -%}
+                {%- if c < tag_min -%}{%- assign tag_min = c -%}{%- endif -%}
+            {%- endfor -%}
+            {%- assign tag_range = tag_max | minus: tag_min -%}
+            {%- for t in site.tags -%}
+                {%- assign name = t[0] -%}
+                {%- assign count = t[1].size -%}
+                {%- if tag_range > 0 -%}
+                    {%- assign bucket = count | minus: tag_min | times: 4 | divided_by: tag_range | plus: 1 -%}
+                    {%- if bucket > 5 -%}{%- assign bucket = 5 -%}{%- endif -%}
+                    {%- if bucket < 1 -%}{%- assign bucket = 1 -%}{%- endif -%}
+                {%- else -%}
+                    {%- assign bucket = 3 -%}
+                {%- endif -%}
+                <a class="set-{{ bucket }}" href="{{ site.baseurl }}/tag/{{ name | slugify }}/">{{ name }}</a>
+            {%- endfor -%}
+        {%- endif -%}
     </div>
 </aside>
