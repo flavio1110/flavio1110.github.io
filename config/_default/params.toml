@@ -1,5 +1,6 @@
 mainSections = ["post"]
 favicon = "/images/favicon.ico"
+description = "I'm fascinated about how tech can change people's lives and how we can tackle real-world problems with software. Hit me up using one of the channels below, and we'll chat real soon! :)"
 RSSFullContent = true
 
 [author]
