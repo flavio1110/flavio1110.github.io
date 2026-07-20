@@ -1,3 +1,14 @@
+/* --- branding: accent color --- */
+:root {
+    --accent-color: #1a9cbc;
+    --accent-color-darker: #15809b;
+
+    &[data-scheme="dark"] {
+        --accent-color: #38b6d1;
+        --accent-color-darker: #1a9cbc;
+    }
+}
+
 /* --- share buttons --- */
 .article-share {
     &.inline-meta a,
