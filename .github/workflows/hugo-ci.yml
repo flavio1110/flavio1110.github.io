@@ -1,5 +1,8 @@
 # Hugo build check for the Jekyll -> Hugo migration.
-# Pinned version must match config/_default/hugo.toml and the Makefile.
+# Build-only: catches broken templates/content on every push. Deploys nothing —
+# Jekyll on `master` keeps deploying via the untouched jekyll.yml.
+# Pinned HUGO_VERSION below must match the pin documented at the top of
+# config/_default/hugo.toml (and the Makefile).
 name: Hugo CI
 
 on:
@@ -8,13 +11,13 @@ on:
   pull_request:
     branches: ["hugo-migration"]
 
+env:
+  # Keep in sync with the pin comment at the top of config/_default/hugo.toml.
+  HUGO_VERSION: 0.164.0
+
 jobs:
   build:
     runs-on: ubuntu-latest
-    # Pinned Hugo version — the `env` context isn't available in `container.image`,
-    # so this can't reference a single shared env var. Must match hugo.toml/Makefile.
-    container:
-      image: hugomods/hugo:0.164.0
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -22,5 +25,11 @@ jobs:
           submodules: recursive
           fetch-depth: 0
 
+      - name: Install Hugo
+        run: |
+          curl -L -o hugo.deb "https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb"
+          sudo dpkg -i hugo.deb
+          hugo version
+
       - name: Build
-        run: hugo --minify
+        run: hugo --minify --gc --printPathWarnings -e production
