@@ -1,0 +1,38 @@
+# Hugo pin: 0.164.0 extended (current stable; Stack v4 declares a floor of
+# 0.157.0 in its module.toml, but v4.0.3's baseof.html actually calls
+# Site.Language.Locale, added in Hugo v0.158.0 — so anything below that breaks
+# the build). Docker image: hugomods/hugo:0.164.0 — hugomods dropped the legacy
+# "exts-<version>" tag prefix; bare version tags now ship the extended build by
+# default. Verified present on Docker Hub as of this pin. CI (.github/workflows/
+# hugo-ci.yml) and the Makefile must reference this same tag/version.
+
+baseURL = "https://fsilva.me/"
+title = "Flavio Silva"
+theme = "hugo-theme-stack"
+
+[languages.en]
+    locale = "en-us"
+    label = "English"
+    weight = 1
+
+[taxonomies]
+    tag = "tags"
+
+[permalinks]
+    post = "/posts/:slug/"
+
+[pagination]
+    pagerSize = 5
+
+[outputFormats.rss]
+    baseName = "feed"
+
+[services.rss]
+    limit = 10
+
+[markup]
+    [markup.goldmark]
+        [markup.goldmark.renderer]
+            unsafe = true
+    [markup.highlight]
+        noClasses = false

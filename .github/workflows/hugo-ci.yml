@@ -1,0 +1,26 @@
+# Hugo build check for the Jekyll -> Hugo migration.
+# Pinned version must match config/_default/hugo.toml and the Makefile.
+name: Hugo CI
+
+on:
+  push:
+    branches: ["hugo-migration"]
+  pull_request:
+    branches: ["hugo-migration"]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    # Pinned Hugo version — the `env` context isn't available in `container.image`,
+    # so this can't reference a single shared env var. Must match hugo.toml/Makefile.
+    container:
+      image: hugomods/hugo:0.164.0
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+          fetch-depth: 0
+
+      - name: Build
+        run: hugo --minify

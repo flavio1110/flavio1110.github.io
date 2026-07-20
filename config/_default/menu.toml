@@ -1,0 +1,29 @@
+# brand-linkedin / brand-mail icons aren't shipped by the theme yet — the
+# branding issue adds custom icons. Until then, `linkedin` and `mailto` fall
+# back to the theme's default "link" icon so the build stays green.
+
+[[social]]
+    identifier = "github"
+    name = "GitHub"
+    url = "https://github.com/flavio1110"
+
+    [social.params]
+        icon = "brand-github"
+
+[[social]]
+    identifier = "linkedin"
+    name = "LinkedIn"
+    url = "https://www.linkedin.com/in/flavio1110"
+
+[[social]]
+    identifier = "twitter-x"
+    name = "X (Twitter)"
+    url = "https://twitter.com/flavio1110"
+
+    [social.params]
+        icon = "brand-twitter"
+
+[[social]]
+    identifier = "mailto"
+    name = "Email"
+    url = "mailto:flavio1110@gmail.com"
