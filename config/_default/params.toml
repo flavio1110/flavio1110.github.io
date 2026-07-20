@@ -1,5 +1,10 @@
 mainSections = ["post"]
 favicon = "/images/favicon.ico"
+RSSFullContent = true
+
+[author]
+    name = "Flavio Silva"
+    email = "flavio1110@gmail.com"
 
 [sidebar]
     avatar = "img/avatar.webp"
